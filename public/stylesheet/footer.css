@@ -1,0 +1,79 @@
+ footer {
+     width: 100%;
+     height: auto;
+     background-image: linear-gradient(rgba(58, 134, 255, .9), rgba(255, 255, 255, .9)),
+         url("/images/school.png");
+     background-size: cover;
+     background-position: center;
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+     font-family: 'Ubuntu', sans-serif;
+
+ }
+
+ .subscribe {
+     width: 90%;
+     height: 20vh;
+     background-color: rgba(58, 134, 255, 1);
+     position: relative;
+     top: -40px;
+     box-shadow: 10px 5px 5px white;
+     border-radius: 10px;
+ }
+
+ .links {
+     display: flex;
+     gap: 5rem;
+     align-items: center;
+     color: white;
+
+ }
+
+ .links .link-box {
+     width: 400px;
+     height: 400px;
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     align-items: center;
+
+ }
+
+ .links .link-box ul li {
+     list-style: none;
+ }
+
+ .links .title {
+     align-items: center;
+     flex-direction: column;
+ }
+
+ .title h4 {
+     color: rgba(255, 255, 255, 0.8);
+ }
+
+ .title p {
+     color: rgba(58, 134, 255, 0.6);
+     margin-left: 2rem;
+ }
+
+ .link-box.social ul {
+     display: flex;
+     /* Display icons in a row */
+     gap: 1rem;
+     /* Adjust spacing between icons */
+     margin: 0;
+     /* Remove default margin from the list */
+     padding: 0;
+     /* Remove default padding from the list */
+ }
+
+
+
+ .link-box.social ul li i {
+     font-size: 25px;
+     color: blue;
+     margin-left: 2rem;
+     cursor: pointer;
+ }

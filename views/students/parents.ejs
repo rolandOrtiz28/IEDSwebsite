@@ -1,0 +1,76 @@
+<% layout('/layouts/boilerplate') -%>
+    <style>
+        .card-registration .select-input.form-control[readonly]:not([disabled]) {
+            font-size: 1rem;
+            line-height: 2.15;
+            padding-left: .75em;
+            padding-right: .75em;
+        }
+
+        .card-registration .select-arrow {
+            top: 13px;
+        }
+    </style>
+
+    <section class="bg-primary mb-5" style="border-radius: 10px;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                    <div class="card card-registration my-4 h-50" style="box-shadow: 10px 5px 5px rgb(0, 179, 255);">
+                        <div class="row g-0">
+                            <div class="col-xl-6 d-none d-xl-block">
+                                <img src="/images/reg.png" alt="Sample photo" class="img-fluid"
+                                    style="border-radius: .25rem 1rem 1rem .25rem; width: 900px; height: 1100px;" />
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card-body p-md-5 text-black">
+                                    <h3 class="mb-5 text-uppercase">Parent's Information</h3>
+                                    <form action="/parents" method="POST" novalidate>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" id="form3Example1m1"
+                                                        class="form-control form-control-lg" name="motherName" />
+                                                    <label class="form-label" for="form3Example1m1">Mother's
+                                                        name</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" id="form3Example1n1"
+                                                        class="form-control form-control-lg" name="fatherName" />
+                                                    <label class="form-label" for="form3Example1n1">Father's
+                                                        name</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="text" id="form3Example8" class="form-control form-control-lg"
+                                                name="motherOccupation" />
+                                            <label class="form-label" for="form3Example8">Mother's Occupation</label>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <input type="text" id="form3Example8" class="form-control form-control-lg"
+                                                name="fatherOccupation" />
+                                            <label class="form-label" for="form3Example8">Father's Occupation</label>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <input type="number" id="form3Example8" class="form-control form-control-lg"
+                                                name="phoneNumber" />
+                                            <label class="form-label" for="form3Example8">Phone Number</label>
+                                        </div>
+
+                                        <div class="d-flex justify-content-end pt-3">
+                                            <button type="submit" class="btn btn-primary btn-lg ms-2">Next</button>
+                                        </div>
+
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

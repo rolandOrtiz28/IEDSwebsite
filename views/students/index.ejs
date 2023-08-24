@@ -1,0 +1,112 @@
+<% layout('/layouts/boilerplate') -%>
+  <link rel="stylesheet" href="/stylesheet/studentIndex.css">
+
+  <%- include('../partials/sidebar') %>
+
+    <!-- Sidebar -->
+
+    <div class="container-fluid students"  style="width: 100%; height:auto;margin-bottom: 5rem;">
+      <div class="content">
+        <button class="btn btn-primary" id="toggleSidebar">Search Student</button>
+        <div class="container-fluid mt-3">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <% const programs = [
+              { id: 'khmer', label: 'Khmer Education Program', curriculum: 'Khmer Education Program', levels: 6 },
+              { id: 'GeneralEnglish', label: 'General English Program', curriculum: 'General English Program', levels: 6 },
+              { id: 'International', label: 'International English Program', curriculum: 'International English Program', levels: 6 },
+              { id: 'Chinese', label: 'Chinese Language Classes', curriculum: 'Chinese Language Classes', levels: 6 },
+              { id: 'Computer', label: 'Computer Program', curriculum: 'Computer Program', levels: 1 },
+              { id: 'Day-Care', label: 'Day-Care', curriculum: 'Day-Care', levels: 1 }
+              // Add more programs here
+            ]; %>
+            <% for (const program of programs) { %>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link<%= program.id === 'khmer' ? ' active' : '' %>"
+                        id="<%= program.id %>-tab" data-bs-toggle="tab" data-bs-target="#<%= program.id %>"
+                        type="button" role="tab" aria-controls="<%= program.id %>" aria-selected="<%= program.id === 'khmer' %>">
+                  <%= program.label %>
+                </button>
+              </li>
+            <% } %>
+          </ul>
+          <div class="tab-content mt-3" id="myTabContent">
+            <% for (const program of programs) { %>
+              <div class="tab-pane fade<%= program.id === 'khmer' ? ' show active' : '' %>"
+                   id="<%= program.id %>" role="tabpanel" aria-labelledby="<%= program.id %>-tab">
+                <div class="d-flex align-items-start">
+                  <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <% for (let level = 1; level <= program.levels; level++) { %>
+                      <button class="nav-link<%= level === 1 ? ' active' : '' %>"
+                              id="<%= program.id %>-lvl<%= level %>-tab" data-bs-toggle="pill"
+                              data-bs-target="#<%= program.id %>-lvl<%= level %>"
+                              type="button" role="tab" aria-controls="<%= program.id %>-lvl<%= level %>"
+                              aria-selected="<%= level === 1 %>">
+                        Level <%= level %>
+                      </button>
+                    <% } %>
+                  </div>
+                  <div class="tab-content p-5" id="v-pills-tabContent" style="width: 100%; height:auto;">
+                    
+                    <% for (let level = 1; level <= program.levels; level++) { %>
+                      <div class="tab-pane fade<%= level === 1 ? ' show active' : '' %>"
+                           id="<%= program.id %>-lvl<%= level %>" role="tabpanel"
+                           aria-labelledby="<%= program.id %>-lvl<%= level %>-tab">
+                        <div class="container-fluid mt-2" style="height: auto;">
+                          <div class="row">
+                            <% const cardsPerPage = 8; %>
+                            <% let cardCount = 0; %>
+                            <div class="row">
+                              <% for (const student of students) { %>
+                                <% if (student.curriculum.includes(program.curriculum) && student.yearLevel.includes(`Level ${level}`)) { %>
+                                  <% if (cardCount % cardsPerPage === 0) { %>
+                                    </div>
+                                    <div class="row">
+                                  <% } %>
+                                  <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                      <div class="card">
+                                        <div class="card-border-top"></div>
+                                        <div class="img"></div>
+                                        <span><%= student.student.firstName %> <%= student.student.lastName %></span>
+                                        <p class="level"><%= student.yearLevel %></p>
+                                        <p class="level"><%= student.curriculum %></p>
+                                      
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <% cardCount++; %>
+                                <% } %>
+                              <% } %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <% } %>
+                    
+                  </div>
+                </div>
+              </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+          
+    <!-- Link to Bootstrap JS (Popper.js is required for some Bootstrap features) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Toggle the sidebar when the button is clicked
+      document.getElementById('toggleSidebar').addEventListener('click', function () {
+        document.getElementById('sidebar').classList.toggle('show');
+      });
+    </script>

@@ -1,0 +1,74 @@
+<% layout('/layouts/boilerplate') -%>
+    <style>
+        .card-registration .select-input.form-control[readonly]:not([disabled]) {
+            font-size: 1rem;
+            line-height: 2.15;
+            padding-left: .75em;
+            padding-right: .75em;
+        }
+
+        .card-registration .select-arrow {
+            top: 13px;
+        }
+    </style>
+
+    <section class="bg-primary mb-5" style="border-radius: 10px;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                    <div class="card card-registration my-4 h-50" style="box-shadow: 10px 5px 5px rgb(0, 179, 255);">
+                        <div class="row g-0">
+                            <div class="col-xl-6 d-none d-xl-block">
+                                <img src="/images/reg.png" alt="Sample photo" class="img-fluid"
+                                    style="border-radius: .25rem 1rem 1rem .25rem; width: 900px; height: 1100px;" />
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card-body p-md-5 text-black">
+                                    <h3 class="mb-5 text-uppercase">Curriculum</h3>
+                                    <form action="/curriculum" method="POST" novalidate>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+                                                <select class="form-select" aria-label="Disabled select example"
+                                                    name="curriculum">
+                                                    <option selected disabled>Curriculum</option>
+                                                    <option value="Khmer Education Program">Khmer Education Program
+                                                    </option>
+                                                    <option value="International English Program">International English
+                                                        Program</option>
+                                                    <option value="General English Program">General English Program
+                                                    </option>
+                                                    <option value="Chinese Language Classes">Chinese Language Classes
+                                                    </option>
+                                                    <option value="Computer Programs">Computer Programs</option>
+                                                    <option value="Day-care">Day-care</option>
+                                                    <option disabled>Extra services:</option>
+                                                    <option value="Transportation">Transportation</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <select class="form-select" aria-label="Disabled select example"
+                                                    name="yearLevel">
+                                                    <option selected disabled>Year Level</option>
+                                                    <option value="Level 1">Level 1
+                                                    </option>
+                                                    <option value="Level 2">Level 2</option>
+                                                    <option value="Level 3">Level 3
+                                                    </option>
+                                                    <option value="Level 4">Level 4
+                                                    </option>
+                                                    <option value="Level 5">Level 5</option>
+                                                    <option value="Level 6">Level 6</option>
+
+                                                </select>
+                                            </div>
+                                            <button class="btn btn-primary" type="submit">Register</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>

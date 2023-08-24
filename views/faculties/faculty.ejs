@@ -1,0 +1,58 @@
+<% layout('/layouts/boilerplate') -%>
+<style>
+#faculty{
+width: 100%;
+height: 90vh;
+border: thick double rgb(50, 131, 253);
+margin-bottom: 5rem;
+border-radius: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.wrapper{
+    width: 98%;
+    height: 98%;
+    border-radius: 10px;
+background-color: rgb(50, 131, 253);
+.card{
+width: 200px;
+height: 300px;
+background-color:rgb(50, 131, 253) ;
+margin: 2rem;
+box-shadow: 10px 5px 5px white;
+border: white 2px solid;
+border-radius: 5px;
+}
+.nav button{
+color: white !important;
+
+}
+}
+
+</style>
+<section id="faculty">
+
+<div class="wrapper">
+    <h1 class="h1 text-center">School Faculty Members</h1>
+    <div class="d-flex align-items-start">
+        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
+          <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
+          <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
+          <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+        </div>
+        <div class="tab-content" id="v-pills-tabContent">
+          <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"><div class="card">
+
+          </div></div>
+          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+          <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+          <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+        </div>
+      </div>
+
+</div>
+
+</section>

@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="/stylesheet/footer.css">
+
+<footer>
+    <div class="subscribe  d-flex justify-content-center align-items-center">
+
+        <div class="container">
+            <h2 class="text-center text-white">Join to our Newsletter</h2>
+            <p class="text-center text-white">We will send you an email for our Newsletter to keep you updated!</p>
+            <div class="row justify-content-center">
+
+                <div class="input-group d-flex justify-content-center align-items-center text-center">
+                    <form action="/subs" method="POST" class="d-flex justify-content-center align-items-center">
+                        <input type=" email" class="form-control" name="email" placeholder="Enter your email">
+                        <button class="btn btn-theme text-white text-center" type="submit">Subscribe</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="links">
+        <div class="link-box me-5 title">
+            <h4>IEDS INTERNATIONAL SCHOOL</h4>
+            <p>Facilitating the development of an affection for the nation, harmony, the environment, and nature among
+                children and
+                young individuals, while fostering an appreciation for and mutual respect among one another.</p>
+        </div>
+        <div class="link-box">
+            <p>FURTHER INFORMATION:</p>
+            <ul>
+                <li><a href="#">Terms & Condition</a></li>
+                <li><a href="#">Enrollment Policy</a></li>
+                <li><a href="#">Student Policy</a></li>
+                <li><a href="#">Fees</a></li>
+            </ul>
+        </div>
+        <div class="link-box social">
+            <p>SOCIAL MEDIA</p>
+            <ul>
+                <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                <li data-bs-toggle="modal" data-bs-target="#exampleModalEmail" data-bs-whatever="@getbootstrap"
+                    class="email-btn text-center"><i class="fa-regular fa-envelope"></i></li>
+
+                <li><a href=""><i class="fa-brands fa-tiktok"></i></a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="exampleModalEmail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/send" method="POST">
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipient-name" name="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Email:</label>
+                            <input type="email" class="form-control" id="recipient-name" name="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Subject:</label>
+                            <input type="text" class="form-control" id="recipient-name" name="subject">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Message:</label>
+                            <textarea class="form-control" id="message-text" name="message"></textarea>
+                        </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary w-50">Send message</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>

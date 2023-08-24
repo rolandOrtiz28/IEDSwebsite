@@ -1,0 +1,86 @@
+<% layout('/layouts/boilerplate') -%>
+    <style>
+        .card-registration .select-input.form-control[readonly]:not([disabled]) {
+            font-size: 1rem;
+            line-height: 2.15;
+            padding-left: .75em;
+            padding-right: .75em;
+        }
+
+        .card-registration .select-arrow {
+            top: 13px;
+        }
+    </style>
+
+    <section class="bg-primary mb-5" style="border-radius: 10px;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                    <div class="card card-registration my-4 h-50" style="box-shadow: 10px 5px 5px rgb(0, 179, 255);">
+                        <div class="row g-0">
+                            <div class="col-xl-6 d-none d-xl-block">
+                                <img src="/images/reg.png" alt="Sample photo" class="img-fluid"
+                                    style="border-radius: .25rem 1rem 1rem .25rem; width: 900px; height: 1100px;" />
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card-body p-md-5 text-black">
+                                    <h3 class="mb-5 text-uppercase">Student registration form</h3>
+                                    <form action="/student" method="POST" novalidate>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" id="form3Example1m"
+                                                        class="form-control form-control-lg" name="firstName" />
+                                                    <label class="form-label" for="form3Example1m">First name</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" id="form3Example1n"
+                                                        class="form-control form-control-lg" name="lastName" />
+                                                    <label class="form-label" for="form3Example1n">Last name</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <input type="number" id="form3Example90"
+                                                class="form-control form-control-lg" style="width: 100px;" name="age" />
+                                            <label class="form-label" for="form3Example90">Age</label>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="date" id="form3Example97" class="form-control form-control-lg"
+                                                name="birthday" />
+                                            <label class="form-label" for="form3Example97">Birthday</label>
+                                        </div>
+
+
+                                        <select class="form-select mb-5" aria-label="Disabled select example"
+                                        name="gender" style="width: 100px;">
+                                        <option selected disabled>Gender</option>
+                                        <option value="Male">Male
+                                        </option>
+                                        <option value="International English Program">Female</option>
+                                        
+                                    </select>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="text" id="form3Example8" class="form-control form-control-lg"
+                                                name="address" />
+                                            <label class="form-label" for="form3Example8">Address</label>
+                                        </div>
+
+
+                                        <div class="d-flex justify-content-end pt-3">
+                                            <button type="submit" class="btn btn-primary btn-lg ms-2">Next</button>
+                                        </div>
+
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

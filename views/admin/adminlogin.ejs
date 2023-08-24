@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEDSadmin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheet/login.css">
+    <script src="https://kit.fontawesome.com/00e4d50ddc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <%- include('../partials/flash') %>
+        <form class="form validated-form" action="/login" method="POST" novalidate>
+            <p class="form-title">Sign in to your account</p>
+            <div class="input-container">
+                <input placeholder="Enter username" type="username" name="username">
+            </div>
+            <div class="input-container">
+                <input placeholder="Enter password" type="password" name="password" id="password">
+
+                <div class="input-group-append ">
+                    <button class="btn bg-transparent input" id="eye-icon" type="button">
+                        <i class="far fa-eye icon"></i>
+                    </button>
+                </div>
+            </div>
+            <button class="submit" type="submit">
+                Sign in
+            </button>
+
+        </form>
+
+
+
+
+        <script>
+            let eyeicon = document.getElementById("eye-icon")
+            let password = document.getElementById("password")
+
+            eyeicon.onclick = function () {
+                if (password.type == "password") {
+                    password.type = "text";
+                    eyeicon.innerHTML = '<i class="far fa-eye-slash"></i>';
+                } else {
+                    password.type = "password";
+                    eyeicon.innerHTML = '<i class="far fa-eye"></i>';
+                }
+            }
+
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
